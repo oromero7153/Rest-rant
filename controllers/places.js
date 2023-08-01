@@ -2,6 +2,9 @@ const router = require('express').Router()
 const places = require('../models/places.js')
 
 //GET /new route
+router.get('/new', (req, res) => {
+  res.render('places/new')
+});
 router.post('/', (req, res) => {
   console.log(req.body)
   if (!req.body.pic) {
@@ -17,6 +20,9 @@ router.post('/', (req, res) => {
   places.push(req.body)
   res.redirect('/places')
 })
+
+
+
 
 // GET /places
 router.get('/', (req, res) => {
