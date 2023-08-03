@@ -1,16 +1,16 @@
 const router = require('express').Router();
 const db = require('../models');
-const places = require('../models/places.js');
+//const places = require('../models/places.js');
 
 router.get('/', (req, res) => {
-  db.Place.find()
-  .then((places) =>{
-   res.render('place/index',{ places }) 
-  })
-  .catch(err => {
-    console.log(err)
-    req.render( 'error404' )
-  })
+    db.Place.find()
+    .then((places) => {
+      res.render('places/index', { places })
+    })
+    .catch(err => {
+      console.log(err) 
+      res.render('error404')
+    })
 });
 
 router.post('/', (req, res) => {
