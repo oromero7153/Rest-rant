@@ -1,5 +1,6 @@
-const router = require('express').Router()
-const places = require('../models/places.js')
+const router = require('express').Router();
+const db = require('../models');
+const places = require('../models/places.js');
 
 //new jsx
 router.get('/new', (req, res) => {
