@@ -1,15 +1,13 @@
 const mongoose = require('mongoose')
 
-const {schema} = mongoose
-
-const placeSchema = new Schema({
+const placeSchema = new mongoose.Schema({
     name: { type: String, required: true },
     pic: String,
     cusisines: { type: String, required: true },
     city: { type: String, default: 'Anytown'},
     state: String, 
     founded: Number,
-})
+});
 
 module.exports = mongoose.model('Place', placeSchema)
 
