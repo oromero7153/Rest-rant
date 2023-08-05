@@ -64,6 +64,18 @@ function show(data) {
         <hr />
         <h2>Comments</h2>
         {comments}
+        <form method="POST" action={ `/place/${data/place.id}/comment` }>
+          <div className="row">
+            <div className="col-sm-6">
+              <label htmlFor="author">Author</label>
+              <input id="author" name="author" className="form-control"></input>
+            </div>
+            <div className="col-sm-6">
+              <label htmlFor="content">Content</label>
+              <textarea id="content" name="content" className="form-control"></textarea>
+            </div>
+          </div>
+        </form>
       </main>
     </Def>
   )
