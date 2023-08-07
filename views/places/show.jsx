@@ -8,10 +8,10 @@ function show(data) {
     </h3>
   )
   if (data.place.comments.length) {
-    comments = data.place.comments.map(c=>{
+    comments = data.place.comments.map(c => {
       return (
         <div className="border">
-          <h2 className="rant">{c.rant ? 'Rant!😡': 'Rave!😻'}</h2>
+          <h2 className="rant">{c.rant ? 'Rant!😡' : 'Rave!😻'}</h2>
           <h4>{c.content}</h4>
           <h3>
             <strong>- {c.author}</strong>
@@ -64,7 +64,7 @@ function show(data) {
         <hr />
         <h2>Comments</h2>
         {comments}
-        <form method="POST" action={ `/place/${data/place.id}/comment` }>
+        <form method="POST" action={`/place/${data / place.id}/comment`}>
           <div className="row">
             <div className="col-sm-6">
               <label htmlFor="author">Author</label>
@@ -74,7 +74,16 @@ function show(data) {
               <label htmlFor="content">Content</label>
               <textarea id="content" name="content" className="form-control"></textarea>
             </div>
+            <div className="form-group col-sm-6">
+              <label htmlFor="stars">Star Rating</label>
+              <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" className="form-control" />
+            </div>
+            <div className="form-group col-sm-6">
+              <label htmlFor="rant">Rant?</label>
+              <input type="checkbox" id="rant" name="rant" className="form-control" />
+            </div>
           </div>
+          <input type="submit" className="btn btn-primary" value="Add Comment" />
         </form>
       </main>
     </Def>
