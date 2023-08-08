@@ -1,4 +1,4 @@
-const db = require('./models')
+const db = require('../models')
 
 
 // To use await, we need an async function.

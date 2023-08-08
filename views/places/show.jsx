@@ -64,7 +64,7 @@ function show(data) {
         <hr />
         <h2>Comments</h2>
         {comments}
-        <form method="POST" action={`/place/${data / place.id}/comment`}>
+        <form method="POST" action={`/places/${data.place.id}/comment`}>
           <div className="row">
             <div className="col-sm-6">
               <label htmlFor="author">Author</label>
