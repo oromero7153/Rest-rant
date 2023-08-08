@@ -7,6 +7,11 @@ function show(data) {
       No comments yet!
     </h3>
   )
+  let rating = (
+    <h3 className="inactive">
+      Not yet rated
+    </h3>
+  )
   if (data.place.comments.length) {
     comments = data.place.comments.map(c => {
       return (
@@ -37,6 +42,7 @@ function show(data) {
             <h2>
               Rating
             </h2>
+            {rating}
             <h3 className="inactive">
               Not Rated
             </h3>
@@ -90,4 +96,3 @@ function show(data) {
   )
 }
 module.exports = show
-
